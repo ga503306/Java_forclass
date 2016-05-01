@@ -1,0 +1,53 @@
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+
+public class test {
+public static void main (String[] args) throws Exception
+{
+	File f = new File("C:\\account.dbs");
+	Scanner input = new Scanner(f);           
+	Scanner scan = new Scanner(System.in);    
+    String data;
+	String tmp;
+	String tempString=""; 
+	String userAccount=""; 
+	String userPassword="";
+	
+	int i=1;            
+	int j=0,k=0,l=0;
+    int countline=0;
+
+	
+	while(input.hasNextLine())
+	{
+	    countline++;
+	    tmp=input.nextLine();
+}
+	input.close();
+	File g= new File("C:\\account.dbs");
+	String[] tempArray = new String[countline];  
+	String[] Account = new String[countline];
+    String[] Password = new String[countline];
+	Scanner input2 = new Scanner(g);
+	
+	while (input2.hasNextLine()){      
+	data = input2.nextLine();          
+     tempString = data;               
+	 
+     tempArray = tempString.split("	"); 
+     
+     Account[k] = tempArray[0];        
+     Password[l] = tempArray[1];
+	 k++;l++;
+	}	
+      
+		show(countline,Account);
+
+}
+		 static void show(int countline,String[] Account){
+					 System.out.println(countline);
+					for(String element : Account)
+					System.out.println(element);
+			}
+}

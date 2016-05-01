@@ -1,0 +1,67 @@
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+
+public class test {
+public static void main (String[] args) throws Exception
+{
+	File f = new File("C:\\account.dbs");
+	Scanner input = new Scanner(f);           
+    String data;
+	String tmp;
+	String tempString=""; 
+
+	
+	int i=1,j;            
+	int k=0,l=0;
+    int countline=0;
+
+	while(input.hasNextLine())
+	{
+		countline++;
+	    tmp=input.nextLine();
+	}
+	input.close();
+	File g= new File("C:\\account.dbs");
+	String[] tempArray = new String[countline];  
+	String[] Account = new String[countline];
+    String[] Password = new String[countline];
+    String[] temp = new String[countline];
+	int [] intvalue = new int[countline];
+	Scanner input2 = new Scanner(g);
+	
+			while (input2.hasNextLine()){     
+			data = input2.nextLine();          
+			 tempString = data;               
+			 tempArray = tempString.split("	"); 
+			 Account[k] = tempArray[0];         
+			 Password[l] = tempArray[1];
+			 k++;l++;
+			}	
+			
+            for(i=0;i<14;i++){
+            intvalue[i] = Integer.parseInt(Password[i]);
+			
+			}
+			for ( i=0;i<14-1;i++)  
+		{
+		    for ( j=0;j<14-i-1;j++)  
+		   {
+				if (intvalue[j+1]>intvalue[j])
+				{
+					int temp1 = intvalue[j+1]; 
+					intvalue[j+1]=intvalue[j];
+					intvalue[j]= temp1;
+					String temp2 = Account[j+1];
+					Account[j+1]=Account[j];
+					Account[j]= temp2;
+					
+				}
+		   }
+		}
+		for(i=0;i<14;i++){
+		System.out.println(Account[i] +"  "+ intvalue[i]);
+		}
+	
+}
+}

@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+
+class Title{
+	private String title;
+	private String publishedYear;
+	public Title(String title,String publishedYear){
+		this.title = title;
+		this.publishedYear = publishedYear;
+	}
+	
+	public void setAccount(String title){
+		this.title = title;
+	}
+	public void setPasswd(String publishedYear){
+		this.publishedYear = publishedYear;
+	}
+	public String getAccount(){
+		return this.title;
+	}
+	public String getPasswd(){
+		return this.publishedYear;
+	}
+	public String toString(){
+		return this.title+","+this.publishedYear;
+	}
+	}
+
+
+public class test {
+public static void main (String[] args) throws Exception
+{
+		Scanner scn = new Scanner(new File("c:\\account.dbs"));
+
+		
+		Title[] accounts = new Title[14];
+		
+		int i = 0;
+		while(scn.hasNext()){
+			accounts[i] = new Title(scn.next(),scn.next());
+			i++;
+	
+		}
+		for(Title x : accounts)
+			System.out.println(x.toString());
+			scn.close();		
+	}
+}

@@ -1,0 +1,52 @@
+String name = "justin";                    // 建立String實例
+System.out.println(name);                  // 顯示justin
+System.out.println(name.length());       // 顯示長度為6
+System.out.println(name.charAt(0));      // 顯示第一個字元j
+System.out.println(name.toUpperCase()); // 顯示JUSTIN
+Arrays.sort(temp);
+====
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+
+public class test {
+public static void main (String[] args) throws Exception
+{
+	introduceMyself();
+	}
+	
+	static void introduceMyself(){
+		System.out.println("10224076"+"hzt");	
+	}
+}
+====
+import java.io.*;
+import java.util.*;
+
+public class test {
+    public static void main(String[] args) throws Exception{
+        Scanner scanner = new Scanner(System.in);
+        long sum = 0;
+        long number = 0;
+        do {
+            System.out.print("enter:");
+            number = Long.parseLong(scanner.nextLine());
+            sum += number;
+        } while(number != 0);
+        System.out.println("sum:" + sum);
+    }
+}
+====
+while(input.hasNextLine())
+	{
+	    countline++;
+		tmp=input.nextLine();
+		System.out.println(tmp);
+	}
+input.close();
+====
+for(i=0;i<4;i++){
+      System.out.print(Account[0].charAt(i)+" "); 
+	  System.out.println(Account[1].charAt(i)); 
+	}
+====
